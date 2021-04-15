@@ -16,32 +16,13 @@ if(isset($_POST['Submit'])) {
 	$email =$_POST['email'];
 	$dept =$_POST['dept'];
 
-	if(empty($name) || empty($age) || empty($email) || empty($dept)) {
-
-		if(empty($name)) {
-			echo "<font color='red'>Name field is empty.</font><br/>";
-		}
-
-		if(empty($age)) {
-			echo "<font color='red'>Age field is empty.</font><br/>";
-		}
-
-		if(empty($email)) {
-			echo "<font color='red'>Email field is empty.</font><br/>";
-		}
-
-		if(empty($dept)) {
-			echo "<font color='red'>Department field is empty.</font><br/>";
-		}
-
-	} else {
-		$result = mysqli_query($mysqli, "INSERT INTO users(name,age,email,dept) VALUES('$name','$age','$email','$dept')");
-		}
+	$result = mysqli_query($mysqli, "INSERT INTO users(name,age,email,dept) VALUES('$name','$age','$email','$dept')");
 	}
-		?>
-		<html>
-		<head>
-			<title>Add Data</title>
+	
+?>
+	<html>
+	<head>
+		<title>Add Data</title>
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
